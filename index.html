@@ -3,424 +3,236 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#11100f">
-
-<title>A message for Sam Sam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sam Sam ❤️</title>
 
 <style>
-:root {
-  --bg: #11100f;
-  --gold: #d8b779;
-  --cream: #f4eee4;
-  --muted: #aaa096;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    #30261d 0%,
-    #171412 38%,
-    var(--bg) 75%
-  );
-  color: var(--cream);
-  font-family: Georgia, serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px 14px;
+    margin: 0;
+    min-height: 100vh;
+    background: #101010;
+    color: #f5eee4;
+    font-family: Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.wrap {
-  width: min(100%, 460px);
-  text-align: center;
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 }
 
-.kicker {
-  font: 10px Arial, sans-serif;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
+.frame {
+    width: min(88vw, 350px);
+    aspect-ratio: 1 / 1;
+    border: 1px solid #a8864b;
+    border-radius: 14px;
+    background: #191919;
+    box-shadow: 0 10px 35px rgba(0,0,0,.4);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-.card {
-  margin: 15px auto 0;
-  background: linear-gradient(145deg, #28231e, #171513);
-  border: 1px solid rgba(216,183,121,.22);
-  border-radius: 16px;
-  padding: 22px 19px;
-  box-shadow: 0 12px 35px #0006;
+.intro h2 {
+    color: #d9b675;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 25px;
 }
 
-.seal {
-  width: 62px;
-  height: 62px;
-  border: 1px solid #8f744b;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 18px;
-  color: var(--gold);
-  font-size: 26px;
-}
-
-h1 {
-  font-size: clamp(30px, 8vw, 40px);
-  font-weight: 400;
-  margin: 8px 0 10px;
-}
-
-.sub {
-  font: 13px/1.7 Arial, sans-serif;
-  color: var(--muted);
-  margin: 0 auto 22px;
-  max-width: 320px;
+.intro p {
+    color: #c9c0b4;
+    font-size: 15px;
 }
 
 button {
-  border: 0;
-  border-radius: 999px;
-  padding: 13px 23px;
-  background: var(--gold);
-  color: #211a11;
-  font: 600 12px Arial, sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
+    background: #b89455;
+    color: #17130d;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 28px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 button:active {
-  transform: scale(.97);
+    transform: scale(.97);
 }
 
 .letter {
-  display: none;
-  text-align: left;
-  margin-top: 22px;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.greeting {
-  font-size: 23px;
-  color: var(--gold);
-  margin: 0 0 18px;
+.message {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #eee5d8;
+    overflow-y: auto;
+    max-height: 100%;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #a8864b transparent;
 }
 
-.line {
-  display: none;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #eee6db;
-  margin: 0 0 17px;
+.message p {
+    margin: 0;
+    display: none;
+    animation: fadeIn .5s ease;
 }
 
-.line.show {
-  display: block;
-  animation: reveal .65s ease both;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(9px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.message p.active {
+    display: block;
 }
 
 .controls {
-  display: none;
-  justify-content: flex-start;
-  gap: 9px;
-  margin: 15px 0 20px;
-  flex-wrap: wrap;
+    display: none;
+    gap: 10px;
+    justify-content: center;
 }
 
 .controls button {
-  padding: 11px 19px;
+    min-width: 110px;
 }
 
-.controls .secondary {
-  background: transparent;
-  border: 1px solid #786344;
-  color: var(--gold);
+#allBtn {
+    background: transparent;
+    color: #d9b675;
+    border: 1px solid #a8864b;
 }
 
 .signature {
-  display: none;
-  text-align: right;
-  color: var(--gold);
-  font-size: 22px;
-  margin: 25px 4px 0;
+    display: none;
+    color: #d9b675;
+    font-size: 18px;
+    margin-top: 3px;
 }
 
 .music {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  color: var(--muted);
-  font: 12px Arial, sans-serif;
+    color: #b8aa94;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .music button {
-  padding: 8px 13px;
-  font-size: 10px;
-  background: transparent;
-  border: 1px solid #786344;
-  color: var(--gold);
+    padding: 8px 15px;
+    font-size: 12px;
+    background: transparent;
+    color: #d9b675;
+    border: 1px solid #a8864b;
 }
 
-.note {
-  font: 11px/1.6 Arial, sans-serif;
-  color: #81796f;
-  margin-top: 18px;
-}
-
-@media(max-width:420px) {
-  .card {
-    padding: 20px 17px;
-  }
-
-  .line {
-    font-size: 16px;
-  }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 
 <body>
 
-<main class="wrap">
+<div class="container">
 
-  <div class="kicker">A personal message</div>
-
-  <section class="card">
-
-    <div id="intro">
-
-      <div class="seal">✉</div>
-
-      <div class="kicker">For your eyes only</div>
-
-      <h1>Hey, Sam Sam.</h1>
-
-      <p class="sub">
-        Jim has sent you a message.<br>
-        A little something he wants you to know.
-      </p>
-
-      <button id="openBtn">Read message</button>
-
-      <p class="note">Take your time. Let it unfold.</p>
-
+    <div class="frame intro" id="intro">
+        <h2>For Sam Sam ❤️</h2>
+        <p>Jim has sent you a message.</p>
+        <button onclick="openLetter()">Read message</button>
     </div>
 
-    <section id="letter" class="letter">
+    <div class="frame letter" id="letter">
+        <div class="message" id="message">
+            <p class="active">So, if I don't text, you're not going to text?</p>
 
-      <p class="greeting">Hey Sam Sam,</p>
+            <p>Anyways, let me repeat my intentions because apparently I need to remind you. I like you, and you already know that. But I can't keep guessing where I stand in your life.</p>
 
-      <p class="line">
-        So, if I don't text, you're not going to text?
-      </p>
+            <p>I understand the dilemma, I know how complicated and weird things can get, but honestly, who cares? As long as you like me and I obviously am ridiculously fond of you, the world can burn for all I care.</p>
 
-      <p class="line">
-        Anyways, let me repeat my intentions because apparently
-        I need to remind you. I like you, and you already know that.
-        But I can't keep guessing where I stand in your life.
-      </p>
+            <p>You know, you're special to me. I want to be that guy you're comfortable around, the guy you can run to when you need a hug, the guy who makes you feel safe and appreciated.</p>
 
-      <p class="line">
-        I understand the dilemma, I know how complicated and weird
-        things can get, but honestly, who cares? As long as you like
-        me and I obviously am ridiculously fond of you, the world
-        can burn for all I care.
-      </p>
+            <p>And let's be honest, without me you're a 9. I'm the 1 you're missing to make you a 10. </p>
+            <p> With No Pen, No Paper you are able to draw my attention how do you do it tho?.<p>
+            <p>But seriously, Sam, tell me where I stand. Don't keep this boy guessing.</p>
+        </div>
+    </div>
 
-      <p class="line">
-        You know, you're special to me. I want to be that guy
-        you're comfortable around, the guy you can run to when
-        you need a hug, the guy who makes you feel safe and appreciated.
-      </p>
+    <div class="controls" id="controls">
+        <button id="nextBtn" onclick="nextMessage()">Next →</button>
+        <button id="allBtn" onclick="readAll()">Read all</button>
+    </div>
 
-      <p class="line">
-        And let's be honest, without me you're a 9.
-        I'm the 1 you're missing to make you a 10.😁
-        Also with No Pen, No Paper you are still able to
-        draw my Attention, Girllll
-      </p>
-
-      <p class="line">
-        But seriously, Sam, tell me where I stand.
-        Don't keep this boy guessing.
-      </p>
-
-      <!-- Controls now appear immediately after the visible paragraph -->
-
-      <div id="controls" class="controls">
-
-        <button id="nextBtn">Next</button>
-
-        <button id="allBtn" class="secondary">
-          Read all
-        </button>
-
-      </div>
-
-      <div id="signature" class="signature">
-        — Jim
-      </div>
-
-    </section>
+    <div class="signature" id="signature">— Jim </div>
 
     <div class="music">
-      <span>♫</span>
-      <span>blue — yung kai</span>
-      <button id="musicBtn">Play music</button>
+        <span>blue — yung kai</span>
+        <button onclick="toggleMusic()" id="musicBtn">Play ♫</button>
     </div>
 
-    <audio id="song" src="blue.mp3" preload="auto"></audio>
+    <audio id="song" src="blue.mp3" loop></audio>
 
-  </section>
-
-  <p class="note">
-    Made by Jim, with a little courage.
-  </p>
-
-</main>
+</div>
 
 <script>
+const paragraphs = document.querySelectorAll("#message p");
+let current = 0;
 
-const song = document.getElementById('song');
-
-const openBtn = document.getElementById('openBtn');
-const intro = document.getElementById('intro');
-const letter = document.getElementById('letter');
-
-const lines = [...document.querySelectorAll('.line')];
-
-const nextBtn = document.getElementById('nextBtn');
-const allBtn = document.getElementById('allBtn');
-
-const controls = document.getElementById('controls');
-const signature = document.getElementById('signature');
-const musicBtn = document.getElementById('musicBtn');
-
-let index = 0;
-let playing = false;
-
-function revealNext() {
-
-  if (index < lines.length) {
-    lines[index].classList.add('show');
-    index++;
-  }
-
-  if (index >= lines.length) {
-    signature.style.display = 'block';
-    nextBtn.textContent = 'Read again';
-  }
-
+function openLetter() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("letter").style.display = "flex";
+    document.getElementById("controls").style.display = "flex";
+    document.getElementById("song").play().catch(() => {});
+    document.getElementById("musicBtn").textContent = "Pause ♫";
 }
 
-openBtn.addEventListener('click', async () => {
-
-  intro.style.display = 'none';
-
-  letter.style.display = 'block';
-
-  controls.style.display = 'flex';
-
-  try {
-
-    await song.play();
-
-    playing = true;
-    musicBtn.textContent = 'Pause music';
-
-  } catch (error) {
-
-    playing = false;
-    musicBtn.textContent = 'Play music';
-
-  }
-
-  revealNext();
-
-});
-
-nextBtn.addEventListener('click', () => {
-
-  if (index >= lines.length) {
-
-    lines.forEach(line => {
-      line.classList.remove('show');
-    });
-
-    index = 0;
-
-    signature.style.display = 'none';
-
-    nextBtn.textContent = 'Next';
-
-  }
-
-  revealNext();
-
-});
-
-allBtn.addEventListener('click', () => {
-
-  lines.forEach(line => {
-    line.classList.add('show');
-  });
-
-  index = lines.length;
-
-  signature.style.display = 'block';
-
-  nextBtn.textContent = 'Read again';
-
-});
-
-musicBtn.addEventListener('click', async () => {
-
-  if (playing) {
-
-    song.pause();
-
-    playing = false;
-
-    musicBtn.textContent = 'Play music';
-
-  } else {
-
-    try {
-
-      await song.play();
-
-      playing = true;
-
-      musicBtn.textContent = 'Pause music';
-
-    } catch (error) {
-
-      musicBtn.textContent = 'Play music';
-
+function nextMessage() {
+    if (current < paragraphs.length - 1) {
+        paragraphs[current].classList.remove("active");
+        current++;
+        paragraphs[current].classList.add("active");
+    } else {
+        document.getElementById("letter").style.display = "none";
+        document.getElementById("controls").style.display = "none";
+        document.getElementById("signature").style.display = "block";
     }
+}
 
-  }
+function readAll() {
+    paragraphs.forEach(p => p.classList.add("active"));
+    document.getElementById("message").style.overflowY = "auto";
+    document.getElementById("controls").style.display = "none";
+    document.getElementById("signature").style.display = "block";
+}
 
-});
+function toggleMusic() {
+    const song = document.getElementById("song");
+    const btn = document.getElementById("musicBtn");
 
+    if (song.paused) {
+        song.play();
+        btn.textContent = "Pause ♫";
+    } else {
+        song.pause();
+        btn.textContent = "Play ♫";
+    }
+}
 </script>
 
 </body>
