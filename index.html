@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11100f">
+<title>A message for Sam Sam</title>
+
+<style>
+:root {
+  --bg: #11100f;
+  --gold: #d8b779;
+  --cream: #f4eee4;
+  --muted: #aaa096;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #30261d 0%,
+    #171412 38%,
+    var(--bg) 75%
+  );
+  color: var(--cream);
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.wrap {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.kicker {
+  font: 11px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.card {
+  margin: 22px auto 0;
+  background: linear-gradient(145deg, #28231e, #171513);
+  border: 1px solid rgba(216,183,121,.28);
+  border-radius: 22px;
+  padding: 34px 25px;
+  box-shadow: 0 25px 80px #0008;
+}
+
+.seal {
+  width: 72px;
+  height: 72px;
+  border: 1px solid #8f744b;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+  color: var(--gold);
+  font-size: 29px;
+}
+
+h1 {
+  font-size: clamp(32px, 8vw, 46px);
+  font-weight: 400;
+  margin: 8px 0 12px;
+}
+
+.sub {
+  font: 14px/1.7 Arial, sans-serif;
+  color: var(--muted);
+  margin: 0 auto 25px;
+  max-width: 340px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 25px;
+  background: var(--gold);
+  color: #211a11;
+  font: 600 13px Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.letter {
+  display: none;
+  text-align: left;
+  margin-top: 28px;
+}
+
+.greeting {
+  font-size: 25px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.line {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #eee6db;
+  margin-bottom: 19px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.signature {
+  display: none;
+  text-align: right;
+  color: var(--gold);
+  font-size: 23px;
+  margin: 30px 4px 0;
+}
+
+.controls {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.controls .secondary {
+  background: transparent;
+  border: 1px solid #786344;
+  color: var(--gold);
+}
+
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: var(--muted);
+  font: 12px Arial, sans-serif;
+}
+
+.music button {
+  padding: 9px 14px;
+  font-size: 10px;
+  background: transparent;
+  border: 1px solid #786344;
+  color: var(--gold);
+}
+
+.note {
+  font: 11px/1.6 Arial, sans-serif;
+  color: #81796f;
+  margin-top: 22px;
+}
+
+@media(max-width:420px) {
+  .card { padding: 28px 20px; }
+  .line { font-size: 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <div class="kicker">A personal message</div>
+
+  <section class="card">
+
+    <div id="intro">
+
+      <div class="seal">✉</div>
+
+      <div class="kicker">For your eyes only</div>
+
+      <h1>Hey, Sam Sam.</h1>
+
+      <p class="sub">
+        Jim has sent you a message.<br>
+        A little something he wants you to know.
+      </p>
+
+      <button id="openBtn">Read message</button>
+
+      <p class="note">Take your time. Let it unfold.</p>
+
+    </div>
+
+    <section id="letter" class="letter" aria-live="polite">
+
+      <p class="greeting">Hey Sam Sam,</p>
+
+      <p class="line">
+        So, if I don't text, you're not going to text?
+      </p>
+
+      <p class="line">
+        Anyways, let me repeat my intentions because apparently
+        I need to remind you. I like you, and you already know that.
+        But I can't keep guessing where I stand in your life.
+      </p>
+
+      <p class="line">
+        I understand the dilemma, I know how complicated and weird
+        things can get, but honestly, who cares? As long as you like
+        me and I obviously am ridiculously fond of you, the world
+        can burn for all I care.
+      </p>
+
+      <p class="line">
+        You know, you're special to me. I want to be that guy
+        you're comfortable around, the guy you can run to when
+        you need a hug, the guy who makes you feel safe and appreciated.
+      </p>
+
+      <p class="line">
+        And let's be honest, without me you're a 9.
+        I'm the one you're missing to make you a 10. 😂
+      </p>
+
+      <p class="line">
+        But seriously, Sam, tell me where I stand.
+        Don't keep this boy guessing.
+      </p>
+
+      <div id="signature" class="signature">
+        — Jim ❤️
+      </div>
+
+    </section>
+
+    <div id="controls" class="controls">
+
+      <button id="nextBtn">Next</button>
+
+      <button id="allBtn" class="secondary">
+        Read all
+      </button>
+
+    </div>
+
+    <div class="music">
+      <span>♫</span>
+      <span>blue — yung kai</span>
+      <button id="musicBtn">Play music</button>
+    </div>
+
+    <audio id="song" src="blue.mp3" preload="auto"></audio>
+
+  </section>
+
+  <p class="note">Made by Jim, with a little courage.</p>
+
+</main>
+
+<script>
+
+const song = document.getElementById('song');
+
+const openBtn = document.getElementById('openBtn');
+const intro = document.getElementById('intro');
+const letter = document.getElementById('letter');
+
+const lines = [...document.querySelectorAll('.line')];
+
+const nextBtn = document.getElementById('nextBtn');
+const allBtn = document.getElementById('allBtn');
+
+const controls = document.getElementById('controls');
+const signature = document.getElementById('signature');
+const musicBtn = document.getElementById('musicBtn');
+
+let index = 0;
+let playing = false;
+
+function revealNext() {
+
+  if (index < lines.length) {
+    lines[index].classList.add('show');
+    index++;
+  }
+
+  if (index >= lines.length) {
+    signature.style.display = 'block';
+    nextBtn.textContent = 'Read again';
+  }
+
+}
+
+openBtn.addEventListener('click', async () => {
+
+  intro.style.display = 'none';
+  letter.style.display = 'block';
+  controls.style.display = 'flex';
+
+  try {
+    await song.play();
+    playing = true;
+    musicBtn.textContent = 'Pause music';
+  } catch (error) {
+    playing = false;
+    musicBtn.textContent = 'Play music';
+  }
+
+  revealNext();
+
+});
+
+nextBtn.addEventListener('click', () => {
+
+  if (index >= lines.length) {
+
+    lines.forEach(line => line.classList.remove('show'));
+
+    index = 0;
+    signature.style.display = 'none';
+    nextBtn.textContent = 'Next';
+
+  }
+
+  revealNext();
+
+});
+
+allBtn.addEventListener('click', () => {
+
+  lines.forEach(line => line.classList.add('show'));
+
+  index = lines.length;
+  signature.style.display = 'block';
+  nextBtn.textContent = 'Read again';
+
+});
+
+musicBtn.addEventListener('click', async () => {
+
+  if (playing) {
+
+    song.pause();
+    playing = false;
+    musicBtn.textContent = 'Play music';
+
+  } else {
+
+    try {
+
+      await song.play();
+      playing = true;
+      musicBtn.textContent = 'Pause music';
+
+    } catch (error) {
+
+      musicBtn.textContent = 'Play music';
+
+    }
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
