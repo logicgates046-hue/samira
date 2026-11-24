@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#11100f">
+
 <title>A message for Sam Sam</title>
 
 <style>
@@ -33,112 +34,117 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 16px;
+  padding: 18px 14px;
 }
 
 .wrap {
-  width: min(100%, 560px);
+  width: min(100%, 460px);
   text-align: center;
 }
 
 .kicker {
-  font: 11px Arial, sans-serif;
+  font: 10px Arial, sans-serif;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
 }
 
 .card {
-  margin: 22px auto 0;
+  margin: 15px auto 0;
   background: linear-gradient(145deg, #28231e, #171513);
-  border: 1px solid rgba(216,183,121,.28);
-  border-radius: 22px;
-  padding: 34px 25px;
-  box-shadow: 0 25px 80px #0008;
+  border: 1px solid rgba(216,183,121,.22);
+  border-radius: 16px;
+  padding: 22px 19px;
+  box-shadow: 0 12px 35px #0006;
 }
 
 .seal {
-  width: 72px;
-  height: 72px;
+  width: 62px;
+  height: 62px;
   border: 1px solid #8f744b;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  margin: 0 auto 22px;
+  margin: 0 auto 18px;
   color: var(--gold);
-  font-size: 29px;
+  font-size: 26px;
 }
 
 h1 {
-  font-size: clamp(32px, 8vw, 46px);
+  font-size: clamp(30px, 8vw, 40px);
   font-weight: 400;
-  margin: 8px 0 12px;
+  margin: 8px 0 10px;
 }
 
 .sub {
-  font: 14px/1.7 Arial, sans-serif;
+  font: 13px/1.7 Arial, sans-serif;
   color: var(--muted);
-  margin: 0 auto 25px;
-  max-width: 340px;
+  margin: 0 auto 22px;
+  max-width: 320px;
 }
 
 button {
   border: 0;
   border-radius: 999px;
-  padding: 15px 25px;
+  padding: 13px 23px;
   background: var(--gold);
   color: #211a11;
-  font: 600 13px Arial, sans-serif;
+  font: 600 12px Arial, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 button:active {
-  transform: scale(.98);
+  transform: scale(.97);
 }
 
 .letter {
   display: none;
   text-align: left;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .greeting {
-  font-size: 25px;
+  font-size: 23px;
   color: var(--gold);
-  margin-bottom: 20px;
+  margin: 0 0 18px;
 }
 
 .line {
-  font-size: 18px;
-  line-height: 1.8;
+  display: none;
+  font-size: 17px;
+  line-height: 1.7;
   color: #eee6db;
-  margin-bottom: 19px;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .8s ease, transform .8s ease;
+  margin: 0 0 17px;
 }
 
 .line.show {
-  opacity: 1;
-  transform: translateY(0);
+  display: block;
+  animation: reveal .65s ease both;
 }
 
-.signature {
-  display: none;
-  text-align: right;
-  color: var(--gold);
-  font-size: 23px;
-  margin: 30px 4px 0;
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .controls {
   display: none;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 25px;
+  justify-content: flex-start;
+  gap: 9px;
+  margin: 15px 0 20px;
   flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 11px 19px;
 }
 
 .controls .secondary {
@@ -147,18 +153,26 @@ button:active {
   color: var(--gold);
 }
 
+.signature {
+  display: none;
+  text-align: right;
+  color: var(--gold);
+  font-size: 22px;
+  margin: 25px 4px 0;
+}
+
 .music {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 22px;
+  margin-top: 20px;
   color: var(--muted);
   font: 12px Arial, sans-serif;
 }
 
 .music button {
-  padding: 9px 14px;
+  padding: 8px 13px;
   font-size: 10px;
   background: transparent;
   border: 1px solid #786344;
@@ -168,12 +182,17 @@ button:active {
 .note {
   font: 11px/1.6 Arial, sans-serif;
   color: #81796f;
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 @media(max-width:420px) {
-  .card { padding: 28px 20px; }
-  .line { font-size: 17px; }
+  .card {
+    padding: 20px 17px;
+  }
+
+  .line {
+    font-size: 16px;
+  }
 }
 </style>
 </head>
@@ -205,7 +224,7 @@ button:active {
 
     </div>
 
-    <section id="letter" class="letter" aria-live="polite">
+    <section id="letter" class="letter">
 
       <p class="greeting">Hey Sam Sam,</p>
 
@@ -234,7 +253,9 @@ button:active {
 
       <p class="line">
         And let's be honest, without me you're a 9.
-        I'm the one you're missing to make you a 10. 😂
+        I'm the 1 you're missing to make you a 10.😁
+        Also with No Pen, No Paper you are still able to
+        draw my Attention, Girllll
       </p>
 
       <p class="line">
@@ -242,21 +263,23 @@ button:active {
         Don't keep this boy guessing.
       </p>
 
+      <!-- Controls now appear immediately after the visible paragraph -->
+
+      <div id="controls" class="controls">
+
+        <button id="nextBtn">Next</button>
+
+        <button id="allBtn" class="secondary">
+          Read all
+        </button>
+
+      </div>
+
       <div id="signature" class="signature">
-        — Jim ❤️
+        — Jim
       </div>
 
     </section>
-
-    <div id="controls" class="controls">
-
-      <button id="nextBtn">Next</button>
-
-      <button id="allBtn" class="secondary">
-        Read all
-      </button>
-
-    </div>
 
     <div class="music">
       <span>♫</span>
@@ -268,7 +291,9 @@ button:active {
 
   </section>
 
-  <p class="note">Made by Jim, with a little courage.</p>
+  <p class="note">
+    Made by Jim, with a little courage.
+  </p>
 
 </main>
 
@@ -309,16 +334,23 @@ function revealNext() {
 openBtn.addEventListener('click', async () => {
 
   intro.style.display = 'none';
+
   letter.style.display = 'block';
+
   controls.style.display = 'flex';
 
   try {
+
     await song.play();
+
     playing = true;
     musicBtn.textContent = 'Pause music';
+
   } catch (error) {
+
     playing = false;
     musicBtn.textContent = 'Play music';
+
   }
 
   revealNext();
@@ -329,10 +361,14 @@ nextBtn.addEventListener('click', () => {
 
   if (index >= lines.length) {
 
-    lines.forEach(line => line.classList.remove('show'));
+    lines.forEach(line => {
+      line.classList.remove('show');
+    });
 
     index = 0;
+
     signature.style.display = 'none';
+
     nextBtn.textContent = 'Next';
 
   }
@@ -343,10 +379,14 @@ nextBtn.addEventListener('click', () => {
 
 allBtn.addEventListener('click', () => {
 
-  lines.forEach(line => line.classList.add('show'));
+  lines.forEach(line => {
+    line.classList.add('show');
+  });
 
   index = lines.length;
+
   signature.style.display = 'block';
+
   nextBtn.textContent = 'Read again';
 
 });
@@ -356,7 +396,9 @@ musicBtn.addEventListener('click', async () => {
   if (playing) {
 
     song.pause();
+
     playing = false;
+
     musicBtn.textContent = 'Play music';
 
   } else {
@@ -364,7 +406,9 @@ musicBtn.addEventListener('click', async () => {
     try {
 
       await song.play();
+
       playing = true;
+
       musicBtn.textContent = 'Pause music';
 
     } catch (error) {
